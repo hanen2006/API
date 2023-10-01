@@ -24,10 +24,10 @@ import warnings
 warnings.filterwarnings('ignore')
 #Chargement du tableau et du modèle
 
-df = pd.read_csv("X_sample.csv")
+df = pd.read_csv("data/X_sample.csv")
 print(df.head())
 app = Flask(__name__)
-LGBMClassifier = pickle.load(open("LGBMClassifier.pkl", "rb"))
+LGBMClassifier = pickle.load(open("modele/LGBMClassifier.pkl", "rb"))
 
 
 df.drop(columns='TARGET', inplace=True)
