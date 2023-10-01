@@ -53,7 +53,7 @@ def predict():
                     "list_client_id" : list(num_client.astype(str))})
 
 
-@app.route('/predict/<int:sk_id>')
+@app.route('/predict/<int:sk_id>',methods=['GET'])
 def predict_get(sk_id):
     """
 
