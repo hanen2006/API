@@ -37,10 +37,9 @@ num_client = df.index.unique()
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return "api"
 
-
-@app.route('/predict/')
+@app.route('/predict')
 def predict():
     """
 
