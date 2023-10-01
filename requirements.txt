@@ -1,0 +1,7 @@
+Flask
+gunicorn
+pickle-mixin==1.0.2
+pandas
+lightgbm
+
+
