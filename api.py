@@ -11,7 +11,6 @@ import pickle
 import pandas as pd
 import shap
 import json
-import numpy as np
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = False
