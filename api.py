@@ -64,7 +64,6 @@ def predict_get(sk_id):
         'predict_proba_0': predict_proba_0,
         'predict_proba_1': predict_proba_1
     })
-# ... (reste du code)
 
 print(num_client[:10])  # printez les 10 premiers ID pour vérifier
 
