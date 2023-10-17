@@ -21,7 +21,7 @@ import numpy as np
 import warnings
 warnings.filterwarnings('ignore')
 # Initialiser l'application Flask
-app = Flask(__name__)
+
 app.config["DEBUG"] = False
 
 #Chargement du tableau et du modèle
