@@ -52,16 +52,7 @@ def all_scores():
 
 @app.route('/predict/<int:sk_id>',methods=['GET'])
 def predict_get(sk_id):
-   """
-    Parameters
-    ----------
-    sk_id : numero de client
 
-    Returns
-    -------
-    prediction  0 pour paiement OK
-                1 pour defaut de paiement
-    """
     if sk_id in num_client:
         predict = LGBMClassifier.predict(df.loc[sk_id].values.reshape(1,-1))
         predict_proba = LGBMClassifier.predict_proba(df.loc[sk_id].values.reshape(1,-1))
