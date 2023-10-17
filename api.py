@@ -22,13 +22,12 @@ import warnings
 warnings.filterwarnings('ignore')
 # Initialiser l'application Flask
 
+app = Flask(__name__)
 app.config["DEBUG"] = False
 
 #Chargement du tableau et du modèle
 
 df = pd.read_csv("./data/X_sample.csv")
-print(df.head())
-app = Flask(__name__)
 LGBMClassifier = pickle.load(open("./modele/LGBMClassifier.pkl", "rb"))
 
 
