@@ -38,7 +38,7 @@ print(num_client[:10])
 def home():
     return "api"
 
-@app.route('/predict/)
+@app.route('/predict/')
 def predict():
     return jsonify({"model": "'LGBMClassifier",
                     "list_client_id": list(num_client.astype(str))})
