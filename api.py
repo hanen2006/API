@@ -84,12 +84,12 @@ def specific_client_details(sk_id):
             "client_data": client_data,
             "mean_values": mean_values
         })
- else:
+  else:
         return jsonify({"error": "client inconnu"}), 404
 
 @app.route('/shap_values/<int:sk_id>')
 def get_shap_values(sk_id):
-   if sk_id in num_client:
+  if sk_id in num_client:
         subsampled_test_data = df.loc[sk_id].values.reshape(1, -1)
         explainer = shap.TreeExplainer(LGBMClassifier)
         shap_values = explainer.shap_values(subsampled_test_data)
@@ -97,7 +97,7 @@ def get_shap_values(sk_id):
         return jsonify({
             "shap_values": shap_values_list
         })
-    else:
+  else:
         return jsonify({"error": "client inconnu"}), 404
 
 if __name__ == '__main__':
