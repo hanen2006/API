@@ -1,4 +1,4 @@
-²#!/usr/bin/env python
+#!/usr/bin/env python
 # coding: utf-8
 
 # In[1]:
@@ -26,8 +26,10 @@ app.config["DEBUG"] = False
 
 #Chargement du tableau et du modèle
 
-df = pd.read_pickle("C:/Users/PC/Desktop/projetdatascienc/projet 7/X_data.pkl")
-LGBMClassifier = pickle.load(open("C:/Users/PC/Desktop/projetdatascienc/projet 7/LGBMClassifier.pkl", "rb"))
+df = pd.read_csv("./data/X_sample.csv")
+print(df.head())
+app = Flask(__name__)
+LGBMClassifier = pickle.load(open("./modele/LGBMClassifier.pkl", "rb"))
 
 
 df.drop(columns='TARGET', inplace=True)
