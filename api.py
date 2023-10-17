@@ -84,21 +84,21 @@ def all_clients_details():
 
 @app.route('/details/<int:sk_id>')
 def specific_client_details(sk_id):
-    selected_columns = ['CREDIT_TERM', 'EXT_SOURCE_1', 'DAYS_BIRTH', 'PREV_APPL_MEAN_CNT_PAYMENT', 
+  selected_columns = ['CREDIT_TERM', 'EXT_SOURCE_1', 'DAYS_BIRTH', 'PREV_APPL_MEAN_CNT_PAYMENT', 
                         'ANNUITY_INCOME_PERCENT', 'AMT_CREDIT', 'DAYS_EMPLOYED']
-    if sk_id in num_client:
+  if sk_id in num_client:
         client_data = df[selected_columns].loc[sk_id].to_dict()
         mean_values = df[selected_columns].mean().to_dict()
         return jsonify({
             "client_data": client_data,
             "mean_values": mean_values
         })
-    else:
+ else:
         return jsonify({"error": "client inconnu"}), 404
 
 @app.route('/shap_values/<int:sk_id>')
 def get_shap_values(sk_id):
-    if sk_id in num_client:
+   if sk_id in num_client:
         subsampled_test_data = df.loc[sk_id].values.reshape(1, -1)
         explainer = shap.TreeExplainer(LGBMClassifier)
         shap_values = explainer.shap_values(subsampled_test_data)
