@@ -57,4 +57,3 @@ def test_details_invalid_sk_id(client):
 
 
 
-
